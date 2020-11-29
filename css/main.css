@@ -1,0 +1,251 @@
+body
+{
+	font-size: 16px;
+	font-family: 'News Cycle', sans-serif;
+	font-weight: 300;
+	background-color: #ffffff;
+}
+*, *::before, *::after
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+img
+{
+	max-width: 100%;
+}
+/*--layout--*/
+	body
+	{
+		display: grid;
+		grid-template-areas: 
+		"fejlec"
+		"kontent"
+		"lablec";
+		grid-template-rows: max-content 1fr max-content;
+		min-height: 100vh;
+	}
+	header
+	{
+		grid-area: fejlec;
+	}
+	main
+	{
+		grid-area: kontent;
+		display:grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"ful"
+		"megjelenites";
+	}
+	@media only screen and (min-width: 480px)
+	{
+		main
+		{
+			grid-area: kontent;
+			display: grid;
+			grid-template-columns: 1fr 2.8fr;
+			grid-template-areas: 
+			"ful megjelenites";
+		}
+	}
+	footer
+	{
+		background-color: #666696;
+		grid-area: lablec;
+	}
+/*--layout_end--*/
+
+/*--altalanos--*/
+ a
+ {
+ 	text-decoration: none;
+ 	color: #000000;
+ }
+/*--altalanos_end--*/
+
+/*--fejlec--*/
+	.fejlec_disz
+	{
+		max-height: 4vh;
+		min-width: 100%;
+	}
+	.fejlec_savok
+	{
+		background-color: #666696;
+		margin: .5rem;
+		padding: .3rem;
+		border: 2px solid #000000;
+		border-radius: 8px;
+
+		-webkit-box-shadow: 13px -13px 15px 1px rgba(0,0,0,.2);
+		-moz-box-shadow: 13px -13px 15px 1px rgba(0,0,0,.2);
+		box-shadow: 13px -13px 15px 1px rgba(0,0,0,.2);
+
+		min-width: max-content;
+		max-width: 100%;
+	}
+	.fejlec_szakasz
+	{
+		display: inline-block;
+	}
+	.nyelvindex:
+	{
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	.foindex:hover
+	{
+		cursor: pointer;
+		background-color: #e1e1e1;
+	}
+	.lathatatlan
+	{
+		color: #666696;
+		user-select: none;
+	}
+/*--fejlec_end--*/
+
+/*--kontent_altalanos--*/
+	
+	.balra_ful
+	{
+		margin: .7rem 0.2rem 1rem;
+
+		color:#000000;
+		background-color: #e1e1e1;
+		margin: .5rem .5rem;
+		padding: .2rem;
+		border: 2px solid black;
+		border-radius: 8px;
+
+		-webkit-box-shadow: 7px 11px 20px -13px #000000;
+		-moz-box-shadow: 7px 11px 20px -13px #000000;
+		box-shadow: 7px 11px 20px -13px #000000;
+
+		min-width: max-content;
+		max-width: 25%;
+		text-align: center;
+		user-select: none;
+	}
+	.balra_ful:hover
+	{
+		cursor: pointer;
+		background-color: #666696;
+	}
+	.lehajlo
+	{
+		flex-grow: 1;
+		text-align: left;
+	}
+	.gomb
+	{
+		border:2px solid black;
+		color: #ffffff;
+		padding: .5rem 1rem;
+		margin: 0.2rem;
+		border-radius: 8px;
+		transition:.2s;
+		min-width: 5rem;
+		max-width: max-content;
+		background-color: #404040;
+		display: inline-block;
+		/*display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;*/
+	}
+	.valos_gomb:hover
+	{
+		cursor: pointer;
+		background-color: #666696;
+	}
+	.kijelol:hover
+	{
+		/*cursor: text;*/
+		background-color: #666696;
+	}
+	.grid_ful
+	{
+		background-color: #ffffff;
+		grid-area: ful;
+		grid-column: 1/-1;
+		
+	}
+	.grid_kontent
+	{
+		grid-area: megjelenites;
+		display: inline-block;
+		margin: 2.2rem;
+		padding: .5rem;
+		max-width: 75%;
+	}
+	.grid5
+	{
+		display:grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"fejlec"
+		"oldal"
+		"reklam"
+		"kontent"
+		"lablec";
+	}
+/*--kontent_altalanos_end--*/
+
+/*--lablec--*/
+	.lablec_gomb
+	{
+		
+		border:2px solid black;
+		color: #000000;
+		padding: .5rem 1rem;
+		margin: 0.2rem;
+		border-radius: 8px;
+		transition:.2s;
+		min-width: 4rem;
+		max-width: max-content;
+		background-color: #e1e1e1;
+		display: inline-block;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		float: right;
+	}
+	.lablec_gomb:hover
+	{
+		text-decoration: underline;
+		background-color: #666696;
+	}
+/*--lablec_end--*/
+
+/*--kontent_eletrajz--*/
+	
+	.angol_magyar
+	{
+		border:2px solid black;
+		color: #000000;
+		padding: .5rem 1rem;
+		margin: 0.2rem;
+		border-radius: 8px;
+		transition:.2s;
+		min-width: 2rem;
+		max-width: max-content;
+		background-color: #e1e1e1;
+		display: inline-block;
+	}
+	
+	.eletrajz_kep
+	{
+		max-width: 25%
+	}
+		
+/*--kontent_eletrajz_end--*/
+
+/*--kontent_tervezet--*/
+	.tervezet img
+	{
+		float: right;
+		max-height: 200px;
+	}
+/*--kontent_tervezet--*/
